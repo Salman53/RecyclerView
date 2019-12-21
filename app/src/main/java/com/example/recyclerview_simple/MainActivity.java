@@ -1,0 +1,23 @@
+package com.example.recyclerview_simple;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.os.Bundle;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        RecyclerView recyclerView = findViewById(R.id.id_recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        String[] data = {"mango" , "apple" , "banana" , "pineapple" , "guava","mango" , "apple" , "banana" , "pineapple" , "guava"};
+        recyclerView.setAdapter(new Adapter(data));
+
+
+    }
+}
